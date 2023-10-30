@@ -62,6 +62,9 @@ A aplicação vai iniciar no endereço <https://localhost:4200>.
   - Plataforma que será utilizada para deploy da aplicação back-end.
   - Criar uma conta: <https://render.com/>
   - [Tutorial de configuração do Render para deploy](https://github.com/webacademyufac/tutoriais/blob/main/render/render.md)
+- **Aiven**
+  - Serviço de hospedagem de banco de dados MySQL.
+  - Criar uma conta: <https://aiven.io/>
 - **Visual Studio Code**
   - <https://code.visualstudio.com/Download>
 - **Extension Pack for Java (Extensão do VS Code)**
