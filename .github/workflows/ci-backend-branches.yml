@@ -27,4 +27,4 @@ jobs:
         with:
           type: now
           target_branch: main
-          gitgub_token: ${{ github.token }}
+          github_token: ${{ github.token }}
