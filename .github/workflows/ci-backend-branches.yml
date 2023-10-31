@@ -28,3 +28,5 @@ jobs:
           type: now
           target_branch: main
           github_token: ${{ github.token }}
+      - name: test
+        run: mvn spring-boot:test
