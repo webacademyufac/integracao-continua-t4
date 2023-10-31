@@ -18,7 +18,7 @@ public class AtendimentoRepositoryIntegrationTest {
     @Autowired
     private AtendimentoRepository repo;
 
-    // @Test
+    @Test
     public void testAtendimentoSearchByProfissionalName() {
         String termoBusca = "Maria";
         List<Atendimento> atendimentos = repo.busca(termoBusca);
@@ -26,7 +26,7 @@ public class AtendimentoRepositoryIntegrationTest {
         assertTrue(atendimentos.get(0).getProfissional().getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testAtendimentoSearchByPatientName() {
         String termoBusca = "Giulia";
         List<Atendimento> atendimentos = repo.busca(termoBusca);
@@ -34,7 +34,7 @@ public class AtendimentoRepositoryIntegrationTest {
         assertTrue(atendimentos.get(0).getPaciente().getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testAtendimentoSearchByConvenioName() {
         String termoBusca = "Unimed";
         List<Atendimento> atendimentos = repo.busca(termoBusca);
@@ -42,7 +42,7 @@ public class AtendimentoRepositoryIntegrationTest {
         assertTrue(atendimentos.get(0).getConvenio().getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testAtendimentoSearchByUnidadeName() {
         String termoBusca = "Bosque";
         List<Atendimento> atendimentos = repo.busca(termoBusca);
@@ -50,7 +50,7 @@ public class AtendimentoRepositoryIntegrationTest {
         assertTrue(atendimentos.get(0).getProfissional().getUnidade().getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testAtendimentoSearchByEspecialidadeName() {
         String termoBusca = "Cardiologia";
         List<Atendimento> atendimentos = repo.busca(termoBusca);
@@ -58,7 +58,7 @@ public class AtendimentoRepositoryIntegrationTest {
         assertTrue(atendimentos.get(0).getProfissional().getEspecialidade().getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testAtendimentoFindByProfissionalAndData() {
         Atendimento atendimento = repo.findById(1L).get();
         List<Atendimento> atendimentos = repo.findByProfissionalAndDataAndStatusNot(

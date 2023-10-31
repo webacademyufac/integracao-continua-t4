@@ -17,7 +17,7 @@ public class ConvenioRepositoryIntegrationTest {
     @Autowired
     private ConvenioRepository repo;
 
-    // @Test
+    @Test
     public void testConvenioSearchByNome() {
         String termoBusca = "Unimed";
         List<Convenio> convenios = repo.busca(termoBusca);
@@ -25,7 +25,7 @@ public class ConvenioRepositoryIntegrationTest {
         assertTrue(convenios.get(0).getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testConvenioSearchByRazaoSocial() {
         String termoBusca = "Unimed";
         List<Convenio> convenios = repo.busca(termoBusca);
@@ -33,7 +33,7 @@ public class ConvenioRepositoryIntegrationTest {
         assertTrue(convenios.get(0).getRazaoSocial().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testConvenioSearchByCnpj() {
         String termoBusca = "46.560.030/0001-53";
         List<Convenio> convenios = repo.busca(termoBusca);
@@ -41,7 +41,7 @@ public class ConvenioRepositoryIntegrationTest {
         assertTrue(convenios.get(0).getCnpj().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testConvenioSearchByRepresentante() {
         String termoBusca = "Davi";
         List<Convenio> convenios = repo.busca(termoBusca);
@@ -49,7 +49,7 @@ public class ConvenioRepositoryIntegrationTest {
         assertTrue(convenios.get(0).getRepresentante().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testConvenioSearchByEmail() {
         String termoBusca = "contato@bradescosaude.com.br";
         List<Convenio> convenios = repo.busca(termoBusca);
@@ -57,7 +57,7 @@ public class ConvenioRepositoryIntegrationTest {
         assertTrue(convenios.get(0).getEmail().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testConvenioSearchByTelefone() {
         String termoBusca = "(68) 3668-1546";
         List<Convenio> convenios = repo.busca(termoBusca);

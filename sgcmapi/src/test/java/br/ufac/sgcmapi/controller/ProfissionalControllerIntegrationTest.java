@@ -21,13 +21,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @AutoConfigureMockMvc
-// @TestMethodOrder(OrderAnnotation.class)
+@TestMethodOrder(OrderAnnotation.class)
 public class ProfissionalControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    // @Test
+    @Test
     @Order(1)
     public void testProfissionalGetAll() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/profissional/"))
@@ -40,7 +40,7 @@ public class ProfissionalControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[4].nome", Matchers.is("Neuza Biango Nobrega")));
     }
 
-    // @Test
+    @Test
     @Order(2)
     public void testProfissionalGetById() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/profissional/1"))
@@ -48,7 +48,7 @@ public class ProfissionalControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.nome", Matchers.is("Maria Adelia Serravalle Bezerra")));
     }
 
-    // @Test
+    @Test
     @Order(3)
     public void testProfissionalGetByTermoBusca() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/profissional/busca/alle"))
@@ -57,7 +57,7 @@ public class ProfissionalControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[0].nome", Matchers.is("Maria Adelia Serravalle Bezerra")));
     }
 
-    // @Test
+    @Test
     @Order(4)
     public void testProfissionalInsert() throws Exception {
 
@@ -72,7 +72,7 @@ public class ProfissionalControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(5)
     public void testProfissionalUpdate() throws Exception {
 
@@ -87,7 +87,7 @@ public class ProfissionalControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(6)
     public void testProfissionalDelete() throws Exception {
 

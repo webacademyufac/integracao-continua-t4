@@ -21,13 +21,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @AutoConfigureMockMvc
-// @TestMethodOrder(OrderAnnotation.class)
+@TestMethodOrder(OrderAnnotation.class)
 public class ConvenioControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    // @Test
+    @Test
     @Order(1)
     public void testConvenioGetAll() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/convenio/"))
@@ -38,7 +38,7 @@ public class ConvenioControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[2].nome", Matchers.is("Bradesco")));
     }
 
-    // @Test
+    @Test
     @Order(2)
     public void testConvenioGetById() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/convenio/1"))
@@ -46,7 +46,7 @@ public class ConvenioControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.nome", Matchers.is("Unimed")));
     }
 
-    // @Test
+    @Test
     @Order(3)
     public void testConvenioGetByTermoBusca() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/convenio/busca/Unimed"))
@@ -55,7 +55,7 @@ public class ConvenioControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[0].nome", Matchers.is("Unimed")));
     }
 
-    // @Test
+    @Test
     @Order(4)
     public void testConvenioInsert() throws Exception {
 
@@ -70,7 +70,7 @@ public class ConvenioControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(5)
     public void testConvenioUpdate() throws Exception {
 
@@ -85,7 +85,7 @@ public class ConvenioControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(6)
     public void testConvenioDelete() throws Exception {
 

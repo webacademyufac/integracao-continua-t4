@@ -21,13 +21,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @AutoConfigureMockMvc
-// @TestMethodOrder(OrderAnnotation.class)
+@TestMethodOrder(OrderAnnotation.class)
 public class PacienteControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    // @Test
+    @Test
     @Order(1)
     public void testPacienteGetAll() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/paciente/"))
@@ -40,7 +40,7 @@ public class PacienteControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[4].nome", Matchers.is("Lucilene Santos Lucas")));
     }
 
-    // @Test
+    @Test
     @Order(2)
     public void testPacienteGetById() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/paciente/1"))
@@ -48,7 +48,7 @@ public class PacienteControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.nome", Matchers.is("Giulia Farias Bencatel")));
     }
 
-    // @Test
+    @Test
     @Order(3)
     public void testPacienteGetByTermoBusca() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/paciente/busca/Giulia"))
@@ -57,7 +57,7 @@ public class PacienteControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[0].nome", Matchers.is("Giulia Farias Bencatel")));
     }
 
-    // @Test
+    @Test
     @Order(4)
     public void testPacienteInsert() throws Exception {
 
@@ -72,7 +72,7 @@ public class PacienteControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(5)
     public void testPacienteUpdate() throws Exception {
 
@@ -87,7 +87,7 @@ public class PacienteControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(6)
     public void testPacienteDelete() throws Exception {
 

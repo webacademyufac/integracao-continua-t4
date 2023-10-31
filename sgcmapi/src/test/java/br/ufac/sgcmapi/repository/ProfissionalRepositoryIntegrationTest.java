@@ -17,7 +17,7 @@ public class ProfissionalRepositoryIntegrationTest {
     @Autowired
     private ProfissionalRepository repo;
 
-    // @Test
+    @Test
     public void testProfissionalSearchByNome() {
         String termoBusca = "Maria";
         List<Profissional> profissionais = repo.busca(termoBusca);
@@ -25,7 +25,7 @@ public class ProfissionalRepositoryIntegrationTest {
         assertTrue(profissionais.get(0).getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testProfissionalSearchByEmail() {
         String termoBusca = "elielson.andrade@gmail.com";
         List<Profissional> profissionais = repo.busca(termoBusca);
@@ -33,7 +33,7 @@ public class ProfissionalRepositoryIntegrationTest {
         assertTrue(profissionais.get(0).getEmail().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testProfissionalSearchByRegistroConselho() {
         String termoBusca = "CRM/AC 123";
         List<Profissional> profissionais = repo.busca(termoBusca);
@@ -41,7 +41,7 @@ public class ProfissionalRepositoryIntegrationTest {
         assertTrue(profissionais.get(0).getRegistroConselho().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testProfissionalSearchByTelefone() {
         String termoBusca = "(68) 98395-5604";
         List<Profissional> profissionais = repo.busca(termoBusca);
@@ -49,7 +49,7 @@ public class ProfissionalRepositoryIntegrationTest {
         assertTrue(profissionais.get(0).getTelefone().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testProfissionalSearchByEspecialidade() {
         String termoBusca = "Cardiologia";
         List<Profissional> profissionais = repo.busca(termoBusca);
@@ -57,7 +57,7 @@ public class ProfissionalRepositoryIntegrationTest {
         assertTrue(profissionais.get(0).getEspecialidade().getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testProfissionalSearchByUnidade() {
         String termoBusca = "Bela Vista";
         List<Profissional> profissionais = repo.busca(termoBusca);

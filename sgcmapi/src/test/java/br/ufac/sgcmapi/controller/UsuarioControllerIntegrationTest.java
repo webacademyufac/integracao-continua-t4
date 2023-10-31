@@ -21,13 +21,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @AutoConfigureMockMvc
-// @TestMethodOrder(OrderAnnotation.class)
+@TestMethodOrder(OrderAnnotation.class)
 public class UsuarioControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    // @Test
+    @Test
     @Order(1)
     public void testUsuarioGetAll() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/config/usuario/"))
@@ -38,7 +38,7 @@ public class UsuarioControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[2].nomeCompleto", Matchers.is("Paulo")));
     }
 
-    // @Test
+    @Test
     @Order(2)
     public void testUsuarioGetById() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/config/usuario/1"))
@@ -46,7 +46,7 @@ public class UsuarioControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.nomeCompleto", Matchers.is("Administrador")));
     }
 
-    // @Test
+    @Test
     @Order(3)
     public void testUsuarioGetByTermoBusca() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/config/usuario/busca/admin"))
@@ -55,7 +55,7 @@ public class UsuarioControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[0].nomeCompleto", Matchers.is("Administrador")));
     }
 
-    // @Test
+    @Test
     @Order(4)
     public void testUsuarioInsert() throws Exception {
 
@@ -70,7 +70,7 @@ public class UsuarioControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(5)
     public void testUsuarioUpdate() throws Exception {
 
@@ -85,7 +85,7 @@ public class UsuarioControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(6)
     public void testUsuarioDelete() throws Exception {
 

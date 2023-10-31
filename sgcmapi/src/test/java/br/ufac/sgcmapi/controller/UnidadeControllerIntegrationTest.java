@@ -21,13 +21,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @AutoConfigureMockMvc
-// @TestMethodOrder(OrderAnnotation.class)
+@TestMethodOrder(OrderAnnotation.class)
 public class UnidadeControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    // @Test
+    @Test
     @Order(1)
     public void testUnidadeGetAll() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/config/unidade/"))
@@ -38,7 +38,7 @@ public class UnidadeControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[2].nome", Matchers.is("Cruzeiro do Sul")));
     }
 
-    // @Test
+    @Test
     @Order(2)
     public void testUnidadeGetById() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/config/unidade/1"))
@@ -46,7 +46,7 @@ public class UnidadeControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.nome", Matchers.is("Bela Vista")));
     }
 
-    // @Test
+    @Test
     @Order(3)
     public void testUnidadeGetByTermoBusca() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/config/unidade/busca/Rua"))
@@ -55,7 +55,7 @@ public class UnidadeControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[0].nome", Matchers.is("Bela Vista")));
     }
 
-    // @Test
+    @Test
     @Order(4)
     public void testUnidadeInsert() throws Exception {
 
@@ -70,7 +70,7 @@ public class UnidadeControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(5)
     public void testUnidadeUpdate() throws Exception {
 
@@ -85,7 +85,7 @@ public class UnidadeControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(6)
     public void testUnidadeDelete() throws Exception {
 

@@ -17,7 +17,7 @@ public class UnidadeRepositoryIntegrationTest {
     @Autowired
     private UnidadeRepository repo;
 
-    // @Test
+    @Test
     public void testUnidadeSearchByNome() {
         String termoBusca = "Bosque";
         List<Unidade> unidades = repo.busca(termoBusca);
@@ -25,7 +25,7 @@ public class UnidadeRepositoryIntegrationTest {
         assertTrue(unidades.get(0).getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testUnidadeSearchByEndereco() {
         String termoBusca = "Rua";
         List<Unidade> unidades = repo.busca(termoBusca);

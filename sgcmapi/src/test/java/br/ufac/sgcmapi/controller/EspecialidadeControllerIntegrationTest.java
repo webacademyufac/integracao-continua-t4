@@ -21,13 +21,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @AutoConfigureMockMvc
-// @TestMethodOrder(OrderAnnotation.class)
+@TestMethodOrder(OrderAnnotation.class)
 public class EspecialidadeControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    // @Test
+    @Test
     @Order(1)
     public void testEspecialidadeGetAll() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/config/especialidade/"))
@@ -42,7 +42,7 @@ public class EspecialidadeControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[6].nome", Matchers.is("Urologia")));
     }
 
-    // @Test
+    @Test
     @Order(2)
     public void testEspecialidadeGetById() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/config/especialidade/1"))
@@ -50,7 +50,7 @@ public class EspecialidadeControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.nome", Matchers.is("Cardiologia")));
     }
 
-    // @Test
+    @Test
     @Order(3)
     public void testEspecialidadeGetByTermoBusca() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/config/especialidade/busca/gia"))
@@ -59,7 +59,7 @@ public class EspecialidadeControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[0].nome", Matchers.is("Cardiologia")));
     }
 
-    // @Test
+    @Test
     @Order(4)
     public void testEspecialidadeInsert() throws Exception {
 
@@ -74,7 +74,7 @@ public class EspecialidadeControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(5)
     public void testEspecialidadeUpdate() throws Exception {
 
@@ -89,7 +89,7 @@ public class EspecialidadeControllerIntegrationTest {
 
     }
 
-    // @Test
+    @Test
     @Order(6)
     public void testEspecialidadeDelete() throws Exception {
 

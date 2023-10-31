@@ -17,7 +17,7 @@ public class EspecialidadeRepositoryIntegrationTest {
     @Autowired
     private EspecialidadeRepository repo;
 
-    // @Test
+    @Test
     public void testEspecialidadeSearchByNome() {
         String termoBusca = "Cardiologia";
         List<Especialidade> especialidades = repo.busca(termoBusca);

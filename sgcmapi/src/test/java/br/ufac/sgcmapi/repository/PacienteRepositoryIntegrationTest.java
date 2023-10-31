@@ -17,7 +17,7 @@ public class PacienteRepositoryIntegrationTest {
     @Autowired
     private PacienteRepository repo;
 
-    // @Test
+    @Test
     public void testPacienteSearchByNome() {
         String termoBusca = "Giulia";
         List<Paciente> pacientes = repo.busca(termoBusca);
@@ -25,7 +25,7 @@ public class PacienteRepositoryIntegrationTest {
         assertTrue(pacientes.get(0).getNome().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testPacienteSearchByEmail() {
         String termoBusca = "wallace.soriano@yahoo.com";
         List<Paciente> pacientes = repo.busca(termoBusca);
@@ -33,7 +33,7 @@ public class PacienteRepositoryIntegrationTest {
         assertTrue(pacientes.get(0).getEmail().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testPacienteSearchByTelefone() {
         String termoBusca = "(68) 99752-4954";
         List<Paciente> pacientes = repo.busca(termoBusca);
@@ -41,7 +41,7 @@ public class PacienteRepositoryIntegrationTest {
         assertTrue(pacientes.get(0).getTelefone().startsWith(termoBusca));
     }
     
-    // @Test
+    @Test
     public void testPacienteSearchByCep() {
         String termoBusca = "69980-970";
         List<Paciente> pacientes = repo.busca(termoBusca);
@@ -49,7 +49,7 @@ public class PacienteRepositoryIntegrationTest {
         assertTrue(pacientes.get(0).getCep().startsWith(termoBusca));
     }
 
-    // @Test
+    @Test
     public void testPacienteSearchByEndereco() {
         String termoBusca = "Rua Cedro";
         List<Paciente> pacientes = repo.busca(termoBusca);

@@ -21,13 +21,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @AutoConfigureMockMvc
-// @TestMethodOrder(OrderAnnotation.class)
+@TestMethodOrder(OrderAnnotation.class)
 public class AtendimentoControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    // @Test
+    @Test
     @Order(1)
     public void testAtendimentoGetAll() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/atendimento/"))
@@ -40,7 +40,7 @@ public class AtendimentoControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[4].hora", Matchers.is("15:00:00")));
     }
 
-    // @Test
+    @Test
     @Order(2)
     public void testAtendimentoGetById() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/atendimento/1"))
@@ -48,7 +48,7 @@ public class AtendimentoControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.hora", Matchers.is("14:00:00")));
     }
 
-    // @Test
+    @Test
     @Order(3)
     public void testAtendimentoGetByTermoBusca() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/atendimento/busca/Cardiologia"))
@@ -58,7 +58,7 @@ public class AtendimentoControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$[1].hora", Matchers.is("15:00:00")));
     }
 
-    // @Test
+    @Test
     @Order(4)
     public void testAtendimentoInsert() throws Exception {
 
@@ -73,7 +73,7 @@ public class AtendimentoControllerIntegrationTest {
         
     }
 
-    // @Test
+    @Test
     @Order(5)
     public void testAtendimentoUpdate() throws Exception {
 
@@ -93,14 +93,14 @@ public class AtendimentoControllerIntegrationTest {
     }
     
 
-    // @Test
+    @Test
     @Order(6)
     public void testAtendimentoDelete() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.delete("/atendimento/1"))
             .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
-    // @Test
+    @Test
     @Order(7)
     public void testAtendimentoUpdateStatus() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.put("/atendimento/status/2"))
@@ -108,7 +108,7 @@ public class AtendimentoControllerIntegrationTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.status", Matchers.is("CONFIRMADO")));
     }
 
-    // @Test
+    @Test
     @Order(8)
     public void testAtendimentoGetHorarios() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/atendimento/horarios/1/2023-12-01"))
