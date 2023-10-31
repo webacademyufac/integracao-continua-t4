@@ -127,3 +127,13 @@ A demonstração de uso das ferramentas e tecnologias abordadas na capacitação
 - [Histórias de usuário](https://github.com/webacademyufac/sgcmdocs#histórias-de-usuário)
 - [Diagrama de Classes](https://github.com/webacademyufac/sgcmdocs#diagrama-de-classes)
 - [Diagrama Entidade Relacionamento](https://github.com/webacademyufac/sgcmdocs#diagrama-entidade-relacionamento)
+
+## Atividades práticas
+
+1. [INDIVIDUAL] Modificar workflow para que o ***job*** que compila o projeto do back-end e realiza os testes, seja dividido em dois ***jobs***, sendo um para copilar o projeto e o outro para testes.
+
+> **IMPORTANTE:**
+>
+> - _**Todos os membros dos grupos devem participar das atividades**_, registrando esta participação por meio da identificação dos commits com seus respectivos usuários no GitHub.
+> - As atividades devem ser desenvolvidas utilizando o respectivo repositório do grupo no GitHub, e _**organizadas por disciplina**_.
+> - Quando se tratar de atividades inividuais, _**cada aluno deve criar uma subpasta com seu nome**_.
