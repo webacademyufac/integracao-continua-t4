@@ -1,14 +1,22 @@
-name: Primeiro Workflow
-on: [push]
+name: CI Back-end
+on: 
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'sgcmapi/**'
 jobs:
-  primeiro-job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Primeiro Passo"
       - name: Chechout
         uses: actions/checkout@v4
-      - name: Lista arquivos
-        run: ls ${{ github.workspace }}
-      - name: Status
-        run: echo "Status ${{ job.status }}."
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with: 
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Maven Compile/test
+        working-directory: sgcmapi/
+        run: mvn compile test
         
