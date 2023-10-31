@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: Chechout
         uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with: 
-          java-version: '17'
-          distribution: 'temurin'
+      # - name: Set up JDK 17
+      #   uses: actions/setup-java@v3
+      #   with: 
+      #     java-version: '17'
+      #     distribution: 'temurin'
       - name: Maven Compile/test
         working-directory: sgcmapi/
         run: mvn compile test
