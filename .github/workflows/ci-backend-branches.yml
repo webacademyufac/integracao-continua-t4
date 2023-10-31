@@ -13,12 +13,12 @@ permissions:
 
 jobs:
 
-  main:
+  compTest:
     name: CI Workflow Main
-    uses: ./.github/workflows/ci-backend.yml
-  
+    uses: ./.github/workflows/ci-backend-tests.yml
+
   merge:
-    needs: main
+    needs: compTest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,5 +27,5 @@ jobs:
         uses: devmasx/merge-branch@1.4.0
         with:
           type: now
-          target_branch: main
+          target-branch: main
           github_token: ${{ github.token }}

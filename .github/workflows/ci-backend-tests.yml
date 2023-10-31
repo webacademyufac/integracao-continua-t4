@@ -1,4 +1,4 @@
-name: CI Back-end
+name: CI Back-end Tests
 
 on:
   push:
@@ -13,6 +13,11 @@ on:
   workflow_call:
 
 jobs:
+
+  compiler:
+    name: CI Back-end Compiler
+    uses: ./.github/workflows/ci-backend-compiler.yml
+
   build:
     runs-on: ubuntu-latest
     steps:
