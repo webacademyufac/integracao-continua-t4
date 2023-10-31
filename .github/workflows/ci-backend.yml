@@ -5,7 +5,10 @@ on:
       - 'main'
     paths:
       - 'sgcmapi/**'
-  workflow_dispatch
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'sgcmapi/**'
 
 jobs:
   build:
