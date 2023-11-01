@@ -130,7 +130,21 @@ A demonstração de uso das ferramentas e tecnologias abordadas na capacitação
 
 ## Atividades práticas
 
-1. [INDIVIDUAL] Modificar workflow para que o ***job*** que compila o projeto do back-end e realiza os testes, seja dividido em dois ***jobs***, sendo um para copilar o projeto e o outro para testes.
+1. [INDIVIDUAL] Modificar workflow para que o _**job**_ que compila o projeto do back-end e realiza os testes, seja dividido em dois _**jobs**_, sendo um para copilar o projeto e o outro para testes. (Entrega: 31/10/2023)
+
+2. [GRUPO] Criar workflow de implantação contínua para o projeto front-end utilizando o GitHub Actions. (Entrega: 01/11/2023)
+
+    - A implantação pode ser feita em qualquer plataforma. Exemplos:
+      - Render (com Docker, a exemplo do que foi feito para aplicação back-end)
+      - Netlify (não tem suporte para Docker): <https://www.netlify.com/>
+      - Vercel (não tem suporte para Docker): <https://vercel.com/>
+    - Antes do _**job**_ de _**deploy**_, deve ser executado o workflow de integração contínua do front-end.
+    - Deve ser criado também um job para executar os testes do end-to-end.
+      - Comando para executar os testes: ```ng run sgcmapp:cypress-run```
+    - **ATENÇÃO**:
+      - Configurar a constante ```API_URL``` no arquivo ```environment.ts``` do projeto front-end.
+      - Modificar as configurações de CORS no back-end para adicionar o host da aplicação front-end em produção.
+      - A implantação deve ser feita obrigatoriamente por meio do GitHub Actions.
 
 > **IMPORTANTE:**
 >
