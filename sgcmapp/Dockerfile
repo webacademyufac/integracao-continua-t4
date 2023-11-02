@@ -1,5 +1,6 @@
 FROM node:18-slim AS build
 COPY . /home/app/
+RUN npm install -g @angular/cli@16
 WORKDIR /home/app/
 RUN npm install && npm run build
 
